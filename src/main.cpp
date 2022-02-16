@@ -1,9 +1,8 @@
 #include <iostream>
 #include <string>
+#include "Games/GuessTheNumber.h"
 
 int main()
 {
-    int addition = 3 + 5;
-    std::cout << std::to_string(addition) << std::endl;
-    std::cout << "Hello World\n";
+    play_guess_the_number();
 }
