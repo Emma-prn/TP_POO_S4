@@ -25,9 +25,9 @@
 
 ### Guess the number
     
-    pick_a_random_number function
-    get_number_from_player function
-    play_guess_the_number function
+    Create pick_a_random_number function
+    Create get_number_from_player function
+    Create play_guess_the_number function
     Split en h and cpp files
 
 ## Lessons read on Wednesday 23th February
@@ -41,3 +41,11 @@
 
     Remove pick_a_random_number and get_number_from_player from the header file. Use static in the cpp file.
     Get the number of try and print it at the end of the game
+
+### Random.h
+
+    Put the pick_a_random_number in its own h file
+
+### Hangman
+
+    Create pick_a_word_to_guess function
