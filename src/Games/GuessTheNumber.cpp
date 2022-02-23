@@ -3,7 +3,7 @@
 #include <random>
 #include <string>
 
-int pick_a_random_number(int minimum, int maximum)
+static int pick_a_random_number(int minimum, int maximum)
 {
     std::random_device                 generator;
     std::mt19937                       mt(generator());
@@ -11,7 +11,7 @@ int pick_a_random_number(int minimum, int maximum)
     return distribution(generator);
 }
 
-int get_number_from_player()
+static int get_number_from_player()
 {
     int choosen_number = -1;
     while ((std::cout << "Please choose a number between 0 and 100 : ") && (!(std::cin >> choosen_number) || choosen_number < 0 || choosen_number > 100)) {
