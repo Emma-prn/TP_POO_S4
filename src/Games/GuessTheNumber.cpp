@@ -3,7 +3,7 @@
 #include <random>
 #include <string>
 
-static int pick_a_random_number(int minimum, int maximum)
+static int pick_a_random_number(int& minimum, int& maximum)
 {
     std::random_device                 generator;
     std::mt19937                       mt(generator());
@@ -27,6 +27,7 @@ void play_guess_the_number()
     std::cout << "================ Guess the number =================" << std::endl;
     int maximum       = 100;
     int minimum       = 0;
+    int player_try    = 0;
     int random_number = pick_a_random_number(minimum, maximum);
     std::cout << "I picked a number between 0 and 100." << std::endl;
     bool guessed = false;
@@ -41,6 +42,7 @@ void play_guess_the_number()
         else {
             guessed = true;
         }
+        player_try++;
     }
-    std::cout << "Congrats, you won !" << std::endl;
+    std::cout << "Congrats, you won ! It take you " << std::to_string(player_try) << " try." << std::endl;
 }
