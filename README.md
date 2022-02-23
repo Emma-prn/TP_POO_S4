@@ -51,3 +51,4 @@
     Create pick_a_word_to_guess function
     Create get_character_from_player function
     Create show_number_of_lives function
+    Create player_is_alive function
