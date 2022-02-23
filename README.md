@@ -26,6 +26,18 @@
 ### Guess the number
     
     pick_a_random_number function
-    get_number_from player function
+    get_number_from_player function
     play_guess_the_number function
     Split en h and cpp files
+
+## Lessons read on Wednesday 23th February
+- [Level 2] DRY : Don't repeat yourself
+- [Level 2] Enums
+- [Level 2] Split problems in small pieces
+
+## Assigment done on Wednesday 23th February
+
+### Guess the number
+
+    Remove pick_a_random_number and get_number_from_player from the header file. Use static in the cpp file.
+    Get the number of try and print it at the end of the game
