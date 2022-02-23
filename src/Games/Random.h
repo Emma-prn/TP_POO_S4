@@ -1,7 +1,8 @@
 #pragma once
 #include <random>
 
-int pick_a_random_number(int& minimum, int& maximum)
+template<typename T>
+T pick_a_random_number(const T& minimum, const T& maximum)
 {
     std::random_device                 generator;
     std::mt19937                       mt(generator());
