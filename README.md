@@ -48,7 +48,7 @@
 ### Level 3
 
 - 📗 std::vector (02/03/22)
-- 📕 Documentation
+- 📗 Documentation (02/03/22)
 - 📕 Use libraries
 - 📕 assert
 - 📕 auto
@@ -89,28 +89,31 @@
 ### 🌕 Guess the number
     
     16/02/22
-    Create pick_a_random_number function 🌕
-    Create get_number_from_player function 🌕
-    Create play_guess_the_number function 🌕
-    Split en h and cpp files 🌕
+    🌕 Create pick_a_random_number function
+    🌕 Create get_number_from_player function
+    🌕 Create play_guess_the_number function
+    🌕 Split en h and cpp files
 
     23/02/22
-    Remove pick_a_random_number and get_number_from_player from the header file. Use static in the cpp file. 🌕
-    Get the number of try and print it at the end of the game 🌕
+    🌕 Remove pick_a_random_number and get_number_from_player from the header file. Use static in the cpp file
+    🌕 Get the number of try and print it at the end of the game
 
 ### 🌔 Random.h
 
     23/02/22
-    Put the pick_a_random_number in its own h file and using a template 🌔
+    🌔 Put the pick_a_random_number in its own h file and using a template
 
 ### 🌓 Hangman
 
     23/02/22
-    Create pick_a_word_to_guess function 🌕
-    Create get_character_from_player function 🌕
-    Create show_number_of_lives function 🌕
-    Create player_is_alive function 🌕
+    🌕 Create pick_a_word_to_guess function
+    🌕 Create get_character_from_player function
+    🌕 Create show_number_of_lives function
+    🌕 Create player_is_alive function
 
     02/03/22
-    Create player_has_won function 🌕
-    Create show_word_to_guess_with_missing_letters function 🌒
+    🌕 Create player_has_won function
+    🌓 Create show_word_to_guess_with_missing_letters function
+    🌕 Create remove_one_life function
+    🌕 Create show_congrats_message function
+    🌕 Create show_defeat_message function
