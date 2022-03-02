@@ -45,31 +45,29 @@
 - 📗 Split problems in small pieces (23/02/22)
 - 📗 Composition over Inheritance (02/03/22)
 
-## Assignment done on Wednesday 16th February
+## Assignments
 
-### Guess the number
+## 🌕 Guess the number
     
+    16/02/22
     Create pick_a_random_number function
     Create get_number_from_player function
     Create play_guess_the_number function
     Split en h and cpp files
 
-## Assigment done on Wednesday 23th February
-
-### Guess the number
-
+    23/02/22
     Remove pick_a_random_number and get_number_from_player from the header file. Use static in the cpp file.
     Get the number of try and print it at the end of the game
 
-### Random.h
+### 🌔 Random.h
 
+    23/02/22
     Put the pick_a_random_number in its own h file
 
-### Hangman
+### 🌓 Hangman
 
+    23/02/22
     Create pick_a_word_to_guess function
     Create get_character_from_player function
     Create show_number_of_lives function
     Create player_is_alive function
-
-## Assigment done on Wednesday 2nd March
