@@ -1,25 +1,49 @@
 # Clean Code with C++
 
-## Lessons read on Wednesday 9th February
+## Legends
 
-- Introduction
-- [Level 1] Install a compiler
-- [Level 1] Use an IDE
-- [Level 1] Use Git
-- [Level 1] Use a debugger
-- [Level 1] Use a formatting tool
-- [Level 1] Use static analysers
-- [Level 1] Naming
-- [Level 1] Stack vs Heap
-- [Level 1] Consistency in style
-- [Level 2] Make it work, then make it good		
-- [Level 2] Prefer free functions
-- [Level 2] Design cohesive classes
+### Lessons
 
-## Lessons read on Wednesday 16th February
+- 📗 Read
+- 📕 Unread
 
-- [Level 2] Use structs to group data
-- [Level 2] Write small functions
+### Assignments
+
+- 🌑 Undone
+- 🌒 Starting
+- 🌓 In progress
+- 🌔 First version
+- 🌕 Done
+
+## Lessons
+
+### Level 0
+
+- 📗 Introduction (09/02/22)
+
+### Level 1
+
+- 📗 Install a compiler (09/02/22)
+- 📗 Use an IDE (09/02/22)
+- 📗 Use Git (09/02/22)
+- 📗 Use a debugger (09/02/22)
+- 📗 Use a formatting tool (09/02/22)
+- 📗 Use static analysers (09/02/22)
+- 📗 Naming (09/02/22)
+- 📗 Stack vs Heap (09/02/22)
+- 📗 Consistency in style (09/02/22)
+
+# Level 2
+
+- 📗 Make it work, then make it good (09/02/22)	
+- 📗 Prefer free functions (09/02/22)
+- 📗 Design cohesive classes (09/02/22)
+- 📗 Use structs to group data (16/02/22)
+- 📗 Write small functions (16/02/22)
+- 📗 DRY : Don't repeat yourself (23/02/22)
+- 📗 Enums (23/02/22)
+- 📗 Split problems in small pieces (23/02/22)
+- 📗 Composition over Inheritance (02/03/22)
 
 ## Assignment done on Wednesday 16th February
 
@@ -29,11 +53,6 @@
     Create get_number_from_player function
     Create play_guess_the_number function
     Split en h and cpp files
-
-## Lessons read on Wednesday 23th February
-- [Level 2] DRY : Don't repeat yourself
-- [Level 2] Enums
-- [Level 2] Split problems in small pieces
 
 ## Assigment done on Wednesday 23th February
 
@@ -52,3 +71,5 @@
     Create get_character_from_player function
     Create show_number_of_lives function
     Create player_is_alive function
+
+## Assigment done on Wednesday 2nd March
