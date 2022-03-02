@@ -33,7 +33,7 @@
 - 📗 Stack vs Heap (09/02/22)
 - 📗 Consistency in style (09/02/22)
 
-# Level 2
+### Level 2
 
 - 📗 Make it work, then make it good (09/02/22)	
 - 📗 Prefer free functions (09/02/22)
@@ -47,7 +47,7 @@
 
 ## Assignments
 
-## 🌕 Guess the number
+### 🌕 Guess the number
     
     16/02/22
     Create pick_a_random_number function
