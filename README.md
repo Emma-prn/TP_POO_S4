@@ -45,29 +45,72 @@
 - 📗 Split problems in small pieces (23/02/22)
 - 📗 Composition over Inheritance (02/03/22)
 
+### Level 3
+
+- 📗 std::vector (02/03/22)
+- 📕 Documentation
+- 📕 Use libraries
+- 📕 assert
+- 📕 auto
+- 📕 Testing
+- 📕 Type design
+- 📕 Dependencies
+- 📕 Lambda functions
+- 📕 Master your IDE
+- 📕 std::optional
+- 📕 Single Source of Truth
+- 📕 Strong Typing
+- 📕 Code reviews
+- 📕 const
+- 📕 Don't overfocus on performance
+- 📕 Git submodules
+- 📕 STL algorithms
+- 📕 Debug vs Release
+- 📕 Immediately Invoked Function
+- 📕 Markdown
+- 📕 Range-based for loop
+- 📕 Smart Pointers
+- 📕 std::function
+- 📕 Error Handling
+- 📕 Git Pull Requests
+- 📕 Advanced Git features
+- 📕 CMake
+- 📕 Functional programming
+- 📕 Move semantics
+- 📕 The Rule of 5
+- 📕 State and Strategy
+- 📕 std::variant
+- 📕 Cache and Branches
+- 📕 Multithreading
+- 📕 Polymorphism
+
 ## Assignments
 
 ### 🌕 Guess the number
     
     16/02/22
-    Create pick_a_random_number function
-    Create get_number_from_player function
-    Create play_guess_the_number function
-    Split en h and cpp files
+    Create pick_a_random_number function 🌕
+    Create get_number_from_player function 🌕
+    Create play_guess_the_number function 🌕
+    Split en h and cpp files 🌕
 
     23/02/22
-    Remove pick_a_random_number and get_number_from_player from the header file. Use static in the cpp file.
-    Get the number of try and print it at the end of the game
+    Remove pick_a_random_number and get_number_from_player from the header file. Use static in the cpp file. 🌕
+    Get the number of try and print it at the end of the game 🌕
 
 ### 🌔 Random.h
 
     23/02/22
-    Put the pick_a_random_number in its own h file
+    Put the pick_a_random_number in its own h file and using a template 🌔
 
 ### 🌓 Hangman
 
     23/02/22
-    Create pick_a_word_to_guess function
-    Create get_character_from_player function
-    Create show_number_of_lives function
-    Create player_is_alive function
+    Create pick_a_word_to_guess function 🌕
+    Create get_character_from_player function 🌕
+    Create show_number_of_lives function 🌕
+    Create player_is_alive function 🌕
+
+    02/03/22
+    Create player_has_won function 🌕
+    Create show_word_to_guess_with_missing_letters function 🌒
