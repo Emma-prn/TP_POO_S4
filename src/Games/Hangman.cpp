@@ -35,15 +35,28 @@ static bool player_is_alive(int number_of_lives)
     return (number_of_lives > 0);
 }
 
-static bool player_has_won()
+static bool player_has_won(const std::vector<bool>& letters_guessed)
 {
-    return true;
+    return std::all_of(letters_guessed.begin(), letters_guessed.end(), [](bool letter_guessed) {
+        return letter_guessed;
+    });
+}
+
+static void show_word_to_guess_with_missing_letters(const std::string& word, const std::vector<bool>& letters_guessed)
+{
+    std::string underscore = std::string(word.size(), '_');
+    std::cout << underscore << std::endl;
 }
 
 void play_hangman()
 {
-    for (size_t i = 0; i < 10; i++) {
-        // std::cout << pick_a_word_to_guess() << std::endl;
-        std::cout << get_character_from_player() << std::endl;
+    std::cout << "================ Hangman =================" << std::endl;
+    int number_of_lives = -10;
+    show_number_of_lives(number_of_lives);
+    if (player_is_alive(number_of_lives)) {
+        std::cout << "Still alive" << std::endl;
+    }
+    else {
+        std::cout << "Not anymore" << std::endl;
     }
 }
