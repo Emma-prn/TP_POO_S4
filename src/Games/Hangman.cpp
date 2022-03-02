@@ -44,19 +44,38 @@ static bool player_has_won(const std::vector<bool>& letters_guessed)
 
 static void show_word_to_guess_with_missing_letters(const std::string& word, const std::vector<bool>& letters_guessed)
 {
-    std::string underscore = std::string(word.size(), '_');
-    std::cout << underscore << std::endl;
+    std::string word_guessed = std::string(word.size(), '_');
+    for (size_t i = 0; i < word.size(); i++) {
+        if (letters_guessed[i]) {
+            word_guessed[i] = word[i];
+        }
+    }
+    std::cout << word_guessed << std::endl;
+}
+
+static void remove_one_life(int& lives_count)
+{
+    lives_count--;
+}
+
+static void show_congrats_message(const std::string& word_to_guess)
+{
+    std::cout << "Congrats, you save a life !" << std::endl;
+    std::cout << "The word was " << word_to_guess << std::endl;
+}
+
+static void show_defeat_message(const std::string& word_to_guess)
+{
+    std::cout << "... Well, he died." << std::endl;
+    std::cout << "The word was " << word_to_guess << std::endl;
 }
 
 void play_hangman()
 {
     std::cout << "================ Hangman =================" << std::endl;
-    int number_of_lives = -10;
+    int         number_of_lives = -10;
+    std::string choosen_word    = pick_a_word_to_guess();
     show_number_of_lives(number_of_lives);
-    if (player_is_alive(number_of_lives)) {
-        std::cout << "Still alive" << std::endl;
-    }
-    else {
-        std::cout << "Not anymore" << std::endl;
-    }
+    show_congrats_message(choosen_word);
+    show_defeat_message(choosen_word);
 }
