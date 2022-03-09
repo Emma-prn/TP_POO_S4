@@ -1,4 +1,5 @@
 #include "Hangman.h"
+#include <assert.h>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -44,6 +45,7 @@ static bool player_has_won(const std::vector<bool>& letters_guessed)
 
 static void show_word_to_guess_with_missing_letters(const std::string& word, const std::vector<bool>& letters_guessed)
 {
+    assert(word.size() == letters_guessed.size());
     std::string word_guessed = std::string(word.size(), '_');
     for (size_t i = 0; i < word.size(); i++) {
         if (letters_guessed[i]) {
@@ -51,6 +53,11 @@ static void show_word_to_guess_with_missing_letters(const std::string& word, con
         }
     }
     std::cout << word_guessed << std::endl;
+}
+
+static bool word_contains(char letter, std::string_view word)
+{
+    return true;
 }
 
 static void remove_one_life(int& lives_count)
@@ -76,6 +83,7 @@ void play_hangman()
     int         number_of_lives = -10;
     std::string choosen_word    = pick_a_word_to_guess();
     show_number_of_lives(number_of_lives);
+    show_word_to_guess_with_missing_letters("console", {true, false, true, true, false, false, true});
     show_congrats_message(choosen_word);
     show_defeat_message(choosen_word);
 }
