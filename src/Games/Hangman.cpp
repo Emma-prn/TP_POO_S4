@@ -57,7 +57,7 @@ static void show_word_to_guess_with_missing_letters(const std::string& word, con
 
 static bool word_contains(char letter, std::string_view word)
 {
-    return true;
+    return (word.find(letter) != std::string::npos) ? true : false;
 }
 
 static void remove_one_life(int& lives_count)
@@ -86,4 +86,5 @@ void play_hangman()
     show_word_to_guess_with_missing_letters("console", {true, false, true, true, false, false, true});
     show_congrats_message(choosen_word);
     show_defeat_message(choosen_word);
+    std::cout << word_contains('l', "console") << std::endl;
 }

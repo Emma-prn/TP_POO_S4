@@ -113,10 +113,13 @@
 
     02/03/22
     🌕 Create player_has_won function
-    🌓 Create show_word_to_guess_with_missing_letters function
+    🌕 Create show_word_to_guess_with_missing_letters function
     🌕 Create remove_one_life function
     🌕 Create show_congrats_message function
     🌕 Create show_defeat_message function
+
+    09/03/22
+    🌔 Create word_contain function
 
 ### 🌑 Adding a menu
 
