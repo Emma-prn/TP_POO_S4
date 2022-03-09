@@ -49,8 +49,8 @@
 
 - 📗 std::vector (02/03/22)
 - 📗 Documentation (02/03/22)
-- 📕 Use libraries
-- 📕 assert
+- 📗 Use libraries (09/03/22)
+- 📗 assert (09/03/22)
 - 📕 auto
 - 📕 Testing
 - 📕 Type design
@@ -117,3 +117,13 @@
     🌕 Create remove_one_life function
     🌕 Create show_congrats_message function
     🌕 Create show_defeat_message function
+
+### 🌑 Adding a menu
+
+### 🌑 Noughts and Crosses
+
+### 🌑 Connect 4
+
+### 🌑 Adding tests
+
+### 🌑 An AI for Hangman
