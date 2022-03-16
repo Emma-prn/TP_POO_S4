@@ -103,7 +103,7 @@
     23/02/22
     🌔 Put the pick_a_random_number in its own h file and using a template
 
-### 🌓 Hangman
+### 🌔 Hangman
 
     23/02/22
     🌕 Create pick_a_word_to_guess function
@@ -119,7 +119,12 @@
     🌕 Create show_defeat_message function
 
     09/03/22
-    🌔 Create word_contain function
+    🌕 Create word_contain function
+
+    16/03/22
+    🌕 Create mark_as_guessed function
+    🌕 Complete play_hangman function
+    🌕 Add some context to the game
 
 ### 🌑 Adding a menu
 
