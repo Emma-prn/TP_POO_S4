@@ -51,8 +51,8 @@
 - 📗 Documentation (02/03/22)
 - 📗 Use libraries (09/03/22)
 - 📗 assert (09/03/22)
-- 📕 auto
-- 📕 Testing
+- 📗 auto (16/03/22)
+- 📗 Testing (16/03/22)
 - 📕 Type design
 - 📕 Dependencies
 - 📕 Lambda functions
