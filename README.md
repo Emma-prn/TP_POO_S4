@@ -126,7 +126,16 @@
     🌕 Complete play_hangman function
     🌕 Add some context to the game
 
-### 🌑 Adding a menu
+### 🌔 Adding a menu
+
+    16/03/22
+    🌕 Create show_the_list_of_commands function
+    🌕 Update the main function
+
+### 🌓 PlayerInput.h
+
+    16/03/22
+    🌓 Create the template for the get_input_from_player
 
 ### 🌑 Noughts and Crosses
 
