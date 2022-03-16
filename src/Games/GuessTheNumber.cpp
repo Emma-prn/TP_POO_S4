@@ -1,19 +1,8 @@
 #include "GuessTheNumber.h"
 #include <iostream>
 #include <string>
+#include "PlayerInput.h"
 #include "Random.h"
-
-
-static int get_number_from_player()
-{
-    int choosen_number = -1;
-    while ((std::cout << "Please choose a number between 0 and 100 : ") && (!(std::cin >> choosen_number) || choosen_number < 0 || choosen_number > 100)) {
-        std::cout << "That's not a number between 0 and 100. ";
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    }
-    return choosen_number;
-}
 
 void play_guess_the_number()
 {
@@ -25,7 +14,7 @@ void play_guess_the_number()
     std::cout << "I picked a number between 0 and 100." << std::endl;
     bool guessed = false;
     while (!guessed) {
-        int player_number = get_number_from_player();
+        int player_number = get_input_from_the_player<int>();
         if (player_number < random_number) {
             std::cout << "It's greater" << std::endl;
         }
