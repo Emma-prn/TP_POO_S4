@@ -60,6 +60,19 @@ static bool word_contains(char letter, std::string_view word)
     return (word.find(letter) != std::string::npos) ? true : false;
 }
 
+void mark_as_guessed(char guessed_letter, std::vector<bool>& letters_guessed, std::string_view word_to_guess)
+{
+    assert(word_to_guess.size() == letters_guessed.size());
+    std::transform(letters_guessed.begin(), letters_guessed.end(), word_to_guess.begin(), letters_guessed.begin(), [&](bool boolean, char letter) {
+        if (guessed_letter == letter) {
+            return true;
+        }
+        else {
+            return boolean;
+        }
+    });
+}
+
 static void remove_one_life(int& lives_count)
 {
     lives_count--;
@@ -80,11 +93,24 @@ static void show_defeat_message(const std::string& word_to_guess)
 void play_hangman()
 {
     std::cout << "================ Hangman =================" << std::endl;
-    int         number_of_lives = -10;
-    std::string choosen_word    = pick_a_word_to_guess();
-    show_number_of_lives(number_of_lives);
-    show_word_to_guess_with_missing_letters("console", {true, false, true, true, false, false, true});
-    show_congrats_message(choosen_word);
-    show_defeat_message(choosen_word);
-    std::cout << word_contains('l', "console") << std::endl;
+    int               number_of_lives = 10;
+    std::string       choosen_word    = pick_a_word_to_guess();
+    std::vector<bool> guessed_letters(choosen_word.size(), false);
+    while (player_is_alive(number_of_lives) && !player_has_won(guessed_letters)) {
+        show_number_of_lives(number_of_lives);
+        show_word_to_guess_with_missing_letters(choosen_word, guessed_letters);
+        const auto guess = get_character_from_player();
+        if (word_contains(guess, choosen_word)) {
+            mark_as_guessed(guess, guessed_letters, choosen_word);
+        }
+        else {
+            remove_one_life(number_of_lives);
+        }
+    }
+    if (player_has_won(guessed_letters)) {
+        show_congrats_message(choosen_word);
+    }
+    else {
+        show_defeat_message(choosen_word);
+    }
 }
