@@ -76,6 +76,9 @@ void mark_as_guessed(char guessed_letter, std::vector<bool>& letters_guessed, st
 static void remove_one_life(int& lives_count)
 {
     lives_count--;
+    if (lives_count == 5) {
+        std::cout << "Carreful..." << std::endl;
+    }
 }
 
 static void show_congrats_message(const std::string& word_to_guess)
@@ -93,6 +96,7 @@ static void show_defeat_message(const std::string& word_to_guess)
 void play_hangman()
 {
     std::cout << "================ Hangman =================" << std::endl;
+    std::cout << "If you don't guess the word, your friend die. But be carreful, if you guess a letter wrong, you lose a life and if it down to 0 well you don't want that to happen." << std::endl;
     int               number_of_lives = 10;
     std::string       choosen_word    = pick_a_word_to_guess();
     std::vector<bool> guessed_letters(choosen_word.size(), false);
