@@ -7,8 +7,8 @@
 static int get_number_from_player(const int& minimum, const int& maximum)
 {
     int number_choosen = -1;
-    while ((std::cout << "Please choose a number between " << std::to_string(minimum) << " and " << std::to_string(maximum) << " : ") && (!(std::cin >> number_choosen) || number_choosen < 0 || number_choosen > 100)) {
-        number_choosen = get_input_from_the_player<int>();
+    while ((std::cout << "Please choose a number between " << std::to_string(minimum) << " and " << std::to_string(maximum) << " : ") && (!(number_choosen = get_input_from_the_player<int>()) || number_choosen < 0 || number_choosen > 100)) {
+        std::cout << "That's not a number between " << std::to_string(minimum) << " and " << std::to_string(maximum) << ". ";
     }
     return number_choosen;
 }
