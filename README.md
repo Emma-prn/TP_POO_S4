@@ -63,7 +63,7 @@
 - 📕 Code reviews
 - 📕 const
 - 📕 Don't overfocus on performance
-- 📕 Git submodules
+- 📗 Git submodules (23/03/22)
 - 📕 STL algorithms
 - 📕 Debug vs Release
 - 📕 Immediately Invoked Function
@@ -74,7 +74,7 @@
 - 📕 Error Handling
 - 📕 Git Pull Requests
 - 📕 Advanced Git features
-- 📕 CMake
+- 📗 CMake (23/03/22)
 - 📕 Functional programming
 - 📕 Move semantics
 - 📕 The Rule of 5
