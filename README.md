@@ -98,6 +98,9 @@
     🌕 Remove pick_a_random_number and get_number_from_player from the header file. Use static in the cpp file
     🌕 Get the number of try and print it at the end of the game
 
+    23/03/22
+    🌕 Use get_imput_from_player function in the get_number_from_player
+
 ### 🌔 Random.h
 
     23/02/22
@@ -126,16 +129,22 @@
     🌕 Complete play_hangman function
     🌕 Add some context to the game
 
+    23/03/22
+    🌕 Use get_imput_from_player function in the get_character_from_player
+
 ### 🌔 Adding a menu
 
     16/03/22
     🌕 Create show_the_list_of_commands function
     🌕 Update the main function
 
-### 🌓 PlayerInput.h
+    23/03/22
+    🌕 Use the get_input_from_player funtion
+
+### 🌔 PlayerInput.h
 
     16/03/22
-    🌓 Create the template for the get_input_from_player
+    🌔 Create the template for the get_input_from_player
 
 ### 🌑 Noughts and Crosses
 
