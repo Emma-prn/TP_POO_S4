@@ -2,6 +2,7 @@
 #include <string>
 #include "Games/GuessTheNumber.h"
 #include "Games/Hangman.h"
+#include "Games/PlayerInput.h"
 
 void show_the_list_of_commands()
 {
@@ -13,19 +14,12 @@ q : I just want to be left alone
     )" << std::endl;
 }
 
-static char get_input_from_player()
-{
-    char choosen_character = '\0';
-    std::cin >> choosen_character;
-    return static_cast<char>(tolower(choosen_character));
-}
-
 int main()
 {
     bool quit = false;
     while (!quit) {
         show_the_list_of_commands();
-        const auto command = get_input_from_player();
+        const auto command = get_input_from_the_player<char>();
         switch (command) {
         case '1':
             play_guess_the_number();
@@ -36,6 +30,7 @@ int main()
             break;
 
         case 'q':
+            std::cout << "Ok see you another time" << std::endl;
             quit = true;
             break;
 
@@ -44,7 +39,4 @@ int main()
             break;
         }
     }
-
-    // play_guess_the_number();
-    // play_hangman();
 }
