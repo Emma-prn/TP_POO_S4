@@ -54,7 +54,7 @@
 - 📗 auto (16/03/22)
 - 📗 Testing (16/03/22)
 - 📕 Type design
-- 📕 Dependencies
+- 📗 Dependencies (23/03/22)
 - 📕 Lambda functions
 - 📕 Master your IDE
 - 📕 std::optional
