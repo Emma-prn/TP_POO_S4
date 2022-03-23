@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "PlayerInput.h"
 #include "Random.h"
 
 static std::string pick_a_word_to_guess()
@@ -20,9 +21,8 @@ static std::string pick_a_word_to_guess()
 
 static char get_character_from_player()
 {
-    char choosen_character = '\0';
     std::cout << "Pick a letter : ";
-    std::cin >> choosen_character;
+    auto choosen_character = get_input_from_the_player<char>();
     return static_cast<char>(tolower(choosen_character));
 }
 
