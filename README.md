@@ -140,6 +140,7 @@
 
     23/03/22
     🌕 Use the get_input_from_player funtion
+    🌕 Create show_menu function and put it in its own h file
 
 ### 🌔 PlayerInput.h
 
