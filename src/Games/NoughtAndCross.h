@@ -1,3 +1,3 @@
 #pragma once
 
-void create_window();
+void play_nought_and_cross();

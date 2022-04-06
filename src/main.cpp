@@ -6,5 +6,5 @@
 int main()
 {
     // show_menu();
-    create_window();
+    play_nought_and_cross();
 }
