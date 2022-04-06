@@ -152,6 +152,8 @@
 
     06/04/22
     🌔 Add p6 lib
+    🌕 Create the window
+
 
 ### 🌑 Connect 4
 
