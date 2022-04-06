@@ -152,7 +152,7 @@
 
     06/04/22
     🌔 Add p6 lib
-    🌕 Create the window
+    🌒 Create play_nought_and_cross function (base)
 
 
 ### 🌑 Connect 4
