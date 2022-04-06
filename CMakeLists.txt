@@ -22,4 +22,4 @@ target_include_directories(${PROJECT_NAME} PRIVATE src)
 
 # Add p6 lib
 add_subdirectory(p6)
-target_link_libraries(${PROJECT_NAME} PRIVATE p6::p6)
+target_link_p6_library(${PROJECT_NAME})
