@@ -57,12 +57,13 @@
 - 📗 Dependencies (23/03/22)
 - 📕 Lambda functions
 - 📕 Master your IDE
-- 📕 std::optional
-- 📕 Single Source of Truth
+- 📗 std::optional (06/04/22)
+- 📗 Single Source of Truth (06/04/22)
 - 📕 Strong Typing
 - 📕 Code reviews
-- 📕 const
-- 📕 Don't overfocus on performance
+- 📗 const (06/04/22)
+- 📗 Documentation (06/04/22)
+- 📗 Don't overfocus on performance
 - 📗 Git submodules (23/03/22)
 - 📕 STL algorithms
 - 📕 Debug vs Release
@@ -147,7 +148,10 @@
     16/03/22
     🌔 Create the template for the get_input_from_player
 
-### 🌑 Noughts and Crosses
+### 🌒 Noughts and Crosses
+
+    06/04/22
+    🌔 Add p6 lib
 
 ### 🌑 Connect 4
 
