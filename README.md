@@ -68,12 +68,12 @@
 - 📕 STL algorithms
 - 📕 Debug vs Release
 - 📕 Immediately Invoked Function
-- 📕 Markdown
-- 📕 Range-based for loop
+- 📗 Markdown (13/04/22)
+- 📗 Range-based for loop (13/04/22)
 - 📕 Smart Pointers
 - 📕 std::function
 - 📕 Error Handling
-- 📕 Git Pull Requests
+- 📗 Git Pull Requests
 - 📕 Advanced Git features
 - 📗 CMake (23/03/22)
 - 📕 Functional programming
