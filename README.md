@@ -102,12 +102,12 @@
     23/03/22
     🌕 Use get_imput_from_player function in the get_number_from_player
 
-### 🌔 Random.h
+### 🌕 Random.h
 
     23/02/22
-    🌔 Put the pick_a_random_number in its own h file and using a template
+    🌕 Put the pick_a_random_number in its own h file and using a template
 
-### 🌔 Hangman
+### 🌕 Hangman
 
     23/02/22
     🌕 Create pick_a_word_to_guess function
@@ -143,16 +143,23 @@
     🌕 Use the get_input_from_player funtion
     🌕 Create show_menu function and put it in its own h file
 
-### 🌔 PlayerInput.h
+### 🌕 PlayerInput.h
 
     16/03/22
-    🌔 Create the template for the get_input_from_player
+    🌕 Create the template for the get_input_from_player
 
 ### 🌒 Noughts and Crosses
 
     06/04/22
-    🌔 Add p6 lib
+    🌕 Add p6 lib
     🌒 Create play_nought_and_cross function (base)
+
+    13/04/22
+    🌕 Create case_index structure
+    🌕 Create case_radius function
+    🌕 Create case_bottom_left_corner function
+    🌕 Create draw_case function
+    🌕 Use draw_case in draw_board
 
 
 ### 🌑 Connect 4
