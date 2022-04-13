@@ -17,7 +17,7 @@ void play_nought_and_cross()
 {
     auto ctx   = p6::Context{{1280, 720, "Noughts and Crosses"}};
     ctx.update = [&]() {
-        ctx.background({0.5f, 0.3f, 0.8f});
+        ctx.background({0.2f, 0.8f, 0.2f});
         draw_board(3, ctx);
     };
     ctx.start();
