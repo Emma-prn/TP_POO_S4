@@ -160,6 +160,7 @@
     🌕 Create case_bottom_left_corner function
     🌕 Create draw_case function
     🌕 Use draw_case in draw_board
+    🌓 Create case_hovered (pb with the direction)
 
 
 ### 🌑 Connect 4
