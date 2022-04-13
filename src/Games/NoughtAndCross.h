@@ -1,8 +1,8 @@
 #pragma once
 
 struct case_index {
-    int column;
-    int row;
+    int x;
+    int y;
 };
 
 void play_nought_and_cross();
