@@ -56,7 +56,17 @@ static void draw_nought(p6::Context& ctx)
     ctx.use_fill = true;
 }
 
-static void draw_cross() {}
+static void draw_cross(p6::Context& ctx)
+{
+    p6::Angle rotation = 0_turn;
+    ctx.stroke         = {1, 0, 0, 0.5};
+    ctx.stroke_weight  = 0.15f;
+    ctx.use_fill       = false;
+    ctx.square(p6::Center{ctx.mouse()},
+               p6::Radius{0.3f},
+               p6::Rotation{rotation});
+    ctx.use_fill = true;
+}
 
 void play_nought_and_cross()
 {
@@ -72,7 +82,7 @@ void play_nought_and_cross()
         if (hovered_case.has_value()) {
             ctx.fill = {0.f, 1.f, 1.f, 1.f};
             draw_case(*hovered_case, board_size, ctx);
-            draw_nought(ctx);
+            draw_cross(ctx);
         }
     };
     ctx.start();
