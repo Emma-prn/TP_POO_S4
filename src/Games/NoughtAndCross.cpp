@@ -1,7 +1,42 @@
 #include "NoughtAndCross.h"
 #include <p6/p6.h>
+#include <array>
 #include <iostream>
 #include <optional>
+
+struct case_index {
+    int x;
+    int y;
+};
+
+enum class Player {
+    Noughts,
+    Crosses,
+};
+
+template<int size>
+class Board {
+private:
+    std::array<std::array<std::optional<Player>, size>, size> _case;
+
+public:
+    std::optional<Player>& operator[](case_index case_index)
+    {
+        assert(index.x >= 0 && index.x < board_size &&
+               index.y >= 0 && index.y < board_size)
+        {
+            _case[case_index.x][case_index.y];
+        }
+    }
+    const std::optional<Player>& operator[](case_index case_index) const
+    {
+        assert(index.x >= 0 && index.x < board_size &&
+               index.y >= 0 && index.y < board_size)
+        {
+            _case[case_index.x][case_index.y];
+        }
+    }
+};
 
 static float case_radius(const int& board_size)
 {
