@@ -162,6 +162,9 @@
     🌕 Use draw_case in draw_board
     🌔 Create case_hovered
 
+    20/04/22
+    🌔 Create draw_nought function
+
 
 ### 🌑 Connect 4
 
