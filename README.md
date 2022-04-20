@@ -148,7 +148,7 @@
     16/03/22
     🌕 Create the template for the get_input_from_player
 
-### 🌒 Noughts and Crosses
+### 🌓 Noughts and Crosses
 
     06/04/22
     🌕 Add p6 lib
@@ -165,6 +165,7 @@
     20/04/22
     🌔 Create draw_nought function
     🌔 Create draw_cross function
+    🌔 Create Board class
 
 
 ### 🌑 Connect 4
