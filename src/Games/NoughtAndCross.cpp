@@ -36,7 +36,7 @@ static std::optional<case_index> case_hovered(glm::vec2 mousse_position, const i
     const auto position = p6::map(mousse_position, glm::vec2{-1.f}, glm::vec2{1.f}, glm::vec2{0.f},
                                   glm::vec2{static_cast<float>(board_size)});
 
-    const auto index = case_index{static_cast<int>(std::floor(position.x)), static_cast<int>(std::floor(position.y))};
+    const auto index = case_index{static_cast<int>(std::floor(position.y)), static_cast<int>(std::floor(position.x))};
     if (index.x >= 0 && index.x < board_size &&
         index.y >= 0 && index.y < board_size) {
         return std::make_optional(index);
