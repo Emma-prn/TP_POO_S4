@@ -46,26 +46,27 @@ static std::optional<case_index> case_hovered(glm::vec2 mousse_position, const i
     }
 }
 
-static void draw_nought(p6::Context& ctx)
+static glm::vec2 case_center(const int& board_size, case_index case_index)
+{
+    return case_bottom_left_corner(case_index, board_size) + case_radius(board_size);
+}
+
+static void draw_nought(case_index case_index, const int& board_size, p6::Context& ctx)
 {
     ctx.stroke        = {1, 0, 0, 0.5};
     ctx.stroke_weight = 0.15f;
-    ctx.use_fill      = false;
-    ctx.circle(p6::Center{ctx.mouse()},
+    ctx.circle(p6::Center{case_center(board_size, case_index)},
                p6::Radius{0.3f});
-    ctx.use_fill = true;
 }
 
-static void draw_cross(p6::Context& ctx)
+static void draw_cross(case_index case_index, const int& board_size, p6::Context& ctx)
 {
     p6::Angle rotation = 0_turn;
     ctx.stroke         = {1, 0, 0, 0.5};
     ctx.stroke_weight  = 0.15f;
-    ctx.use_fill       = false;
-    ctx.square(p6::Center{ctx.mouse()},
+    ctx.square(p6::Center{case_center(board_size, case_index)},
                p6::Radius{0.3f},
                p6::Rotation{rotation});
-    ctx.use_fill = true;
 }
 
 void play_nought_and_cross()
@@ -80,9 +81,7 @@ void play_nought_and_cross()
         draw_board(board_size, ctx);
         const auto hovered_case = case_hovered(ctx.mouse(), board_size);
         if (hovered_case.has_value()) {
-            ctx.fill = {0.f, 1.f, 1.f, 1.f};
-            draw_case(*hovered_case, board_size, ctx);
-            draw_cross(ctx);
+            draw_nought(*hovered_case, board_size, ctx);
         }
     };
     ctx.start();
