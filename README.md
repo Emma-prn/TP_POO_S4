@@ -166,6 +166,7 @@
     🌔 Create draw_nought function
     🌔 Create draw_cross function
     🌔 Create Board class
+    🌔 Create draw_nought_and_cross function
 
 
 ### 🌑 Connect 4
