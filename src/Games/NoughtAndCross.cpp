@@ -38,6 +38,24 @@ public:
     }
 };
 
+template<int size>
+void draw_noughts_and_crosses(const Board<size>& board, p6::Context ctx)
+{
+    for (int x = 0; x < board_size; x++) {
+        for (int y = 0; y < board_size; y++) {
+            const auto case_index = board[{x, y}];
+            if (case_index.has_value()) {
+                if (*case_index == Player::Noughts) {
+                    draw_nought({x, y}, size, ctx);
+                }
+                else {
+                    draw_cross({x, y}, size, ctx);
+                }
+            }
+        }
+    }
+}
+
 static float case_radius(const int& board_size)
 {
     return 1.f / static_cast<float>(board_size);
