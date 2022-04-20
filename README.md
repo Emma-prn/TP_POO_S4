@@ -164,6 +164,7 @@
 
     20/04/22
     🌔 Create draw_nought function
+    🌔 Create draw_cross function
 
 
 ### 🌑 Connect 4
