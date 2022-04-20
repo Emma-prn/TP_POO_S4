@@ -59,7 +59,7 @@
 - 📕 Master your IDE
 - 📗 std::optional (06/04/22)
 - 📗 Single Source of Truth (06/04/22)
-- 📕 Strong Typing
+- 📗 Strong Typing (20/04/22)
 - 📕 Code reviews
 - 📗 const (06/04/22)
 - 📗 Documentation (06/04/22)
@@ -70,8 +70,8 @@
 - 📕 Immediately Invoked Function
 - 📗 Markdown (13/04/22)
 - 📗 Range-based for loop (13/04/22)
-- 📕 Smart Pointers
-- 📕 std::function
+- 📗 Smart Pointers (20/04/22)
+- 📗 std::function (20/04/22)
 - 📕 Error Handling
 - 📗 Git Pull Requests
 - 📕 Advanced Git features
@@ -160,7 +160,7 @@
     🌕 Create case_bottom_left_corner function
     🌕 Create draw_case function
     🌕 Use draw_case in draw_board
-    🌓 Create case_hovered (pb with the direction)
+    🌔 Create case_hovered
 
 
 ### 🌑 Connect 4
