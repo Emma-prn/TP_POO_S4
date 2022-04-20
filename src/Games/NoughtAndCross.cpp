@@ -46,6 +46,18 @@ static std::optional<case_index> case_hovered(glm::vec2 mousse_position, const i
     }
 }
 
+static void draw_nought(p6::Context& ctx)
+{
+    ctx.stroke        = {1, 0, 0, 0.5};
+    ctx.stroke_weight = 0.15f;
+    ctx.use_fill      = false;
+    ctx.circle(p6::Center{ctx.mouse()},
+               p6::Radius{0.3f});
+    ctx.use_fill = true;
+}
+
+static void draw_cross() {}
+
 void play_nought_and_cross()
 {
     auto      ctx        = p6::Context{{1280, 720, "Noughts and Crosses"}};
@@ -60,6 +72,7 @@ void play_nought_and_cross()
         if (hovered_case.has_value()) {
             ctx.fill = {0.f, 1.f, 1.f, 1.f};
             draw_case(*hovered_case, board_size, ctx);
+            draw_nought(ctx);
         }
     };
     ctx.start();
