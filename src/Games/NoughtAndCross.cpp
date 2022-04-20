@@ -22,27 +22,23 @@ private:
 public:
     std::optional<Player>& operator[](case_index case_index)
     {
-        assert(index.x >= 0 && index.x < board_size &&
-               index.y >= 0 && index.y < board_size)
-        {
-            _case[case_index.x][case_index.y];
-        }
+        assert(case_index.x >= 0 && case_index.x < size &&
+               case_index.y >= 0 && case_index.y < size);
+        return _case[case_index.x][case_index.y];
     }
     const std::optional<Player>& operator[](case_index case_index) const
     {
-        assert(index.x >= 0 && index.x < board_size &&
-               index.y >= 0 && index.y < board_size)
-        {
-            _case[case_index.x][case_index.y];
-        }
+        assert(case_index.x >= 0 && case_index.x < size &&
+               case_index.y >= 0 && case_index.y < size);
+        return _case[case_index.x][case_index.y];
     }
 };
 
 template<int size>
-void draw_noughts_and_crosses(const Board<size>& board, p6::Context ctx)
+void draw_noughts_and_crosses(const Board<size>& board, p6::Context& ctx)
 {
-    for (int x = 0; x < board_size; x++) {
-        for (int y = 0; y < board_size; y++) {
+    for (int x = 0; x < size; x++) {
+        for (int y = 0; y < size; y++) {
             const auto case_index = board[{x, y}];
             if (case_index.has_value()) {
                 if (*case_index == Player::Noughts) {
@@ -124,8 +120,10 @@ static void draw_cross(case_index case_index, const int& board_size, p6::Context
 
 void play_nought_and_cross()
 {
-    auto      ctx        = p6::Context{{1280, 720, "Noughts and Crosses"}};
     const int board_size = 3;
+    auto      ctx        = p6::Context{{1280, 720, "Noughts and Crosses"}};
+    auto      board      = Board<board_size>{};
+    board[{0, 1}]        = Player::Crosses;
     ctx.update           = [&]() {
         ctx.background({0.2f, 0.8f, 0.2f});
         ctx.stroke_weight = 0.01f;
@@ -136,6 +134,7 @@ void play_nought_and_cross()
         if (hovered_case.has_value()) {
             draw_nought(*hovered_case, board_size, ctx);
         }
+        draw_noughts_and_crosses(board, ctx);
     };
     ctx.start();
 }
