@@ -169,6 +169,9 @@
     🌔 Create Board class
     🌔 Create draw_nought_and_cross function
 
+    11/05/22
+    🌔 Create change_player function
+    🌔 Create try_to_place_symbol function
 
 ### 🌑 Connect 4
 
