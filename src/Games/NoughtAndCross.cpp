@@ -17,21 +17,26 @@ enum class Player {
 template<int size>
 class Board {
 private:
-    std::array<std::array<std::optional<Player>, size>, size> _case;
+    std::array<std::optional<Player>, size * size> _case;
 
 public:
     std::optional<Player>& operator[](case_index case_index)
     {
         assert(case_index.x >= 0 && case_index.x < size &&
                case_index.y >= 0 && case_index.y < size);
-        return _case[case_index.x][case_index.y];
+        return _case[case_index.x + case_index.y * size];
     }
     const std::optional<Player>& operator[](case_index case_index) const
     {
         assert(case_index.x >= 0 && case_index.x < size &&
                case_index.y >= 0 && case_index.y < size);
-        return _case[case_index.x][case_index.y];
+        return _case[case_index.x + case_index.y * size];
     }
+
+    auto begin() { return _case.begin(); }
+    auto begin() const { return _case.begin(); }
+    auto end() { return _case.end() }
+    auto end() const { return _case.end(); }
 };
 
 static float case_radius(const int& board_size)
@@ -154,6 +159,14 @@ void draw_symbol_in_hovered_case(Player player, Board<size> board, p6::Context& 
     }
 }
 
+template<int size>
+bool board_is_full(const Board<size>& board)
+{
+    return std::all_of(board.begin(), board.end(), [](const auto& cell) {
+        return cell.has_value();
+    });
+}
+
 void play_nought_and_cross()
 {
     const int board_size     = 3;
@@ -171,6 +184,9 @@ void play_nought_and_cross()
         draw_board(board_size, ctx);
         draw_noughts_and_crosses(board, ctx);
         draw_symbol_in_hovered_case(current_player, board, ctx);
+        if (board_is_full(board)) {
+            ctx.stop();
+        }
     };
     ctx.start();
 }
