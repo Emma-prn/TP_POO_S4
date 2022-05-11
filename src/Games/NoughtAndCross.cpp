@@ -34,24 +34,6 @@ public:
     }
 };
 
-template<int size>
-void draw_noughts_and_crosses(const Board<size>& board, p6::Context& ctx)
-{
-    for (int x = 0; x < size; x++) {
-        for (int y = 0; y < size; y++) {
-            const auto case_index = board[{x, y}];
-            if (case_index.has_value()) {
-                if (*case_index == Player::Noughts) {
-                    draw_nought({x, y}, size, ctx);
-                }
-                else {
-                    draw_cross({x, y}, size, ctx);
-                }
-            }
-        }
-    }
-}
-
 static float case_radius(const int& board_size)
 {
     return 1.f / static_cast<float>(board_size);
@@ -63,6 +45,52 @@ static glm::vec2 case_bottom_left_corner(case_index case_index, const int& board
                                  static_cast<float>(case_index.x)};
     return p6::map(index, glm::vec2{0.f}, glm::vec2{static_cast<float>(board_size)},
                    glm::vec2{-1.f}, glm::vec2{1.f});
+}
+
+static glm::vec2 case_center(const int& board_size, case_index case_index)
+{
+    return case_bottom_left_corner(case_index, board_size) + case_radius(board_size);
+}
+
+static void draw_nought(case_index case_index, const int& board_size, p6::Context& ctx)
+{
+    ctx.stroke        = {1, 0, 0, 0.5};
+    ctx.stroke_weight = 0.15f;
+    ctx.circle(p6::Center{case_center(board_size, case_index)},
+               p6::Radius{0.3f});
+}
+
+static void draw_cross(case_index case_index, const int& board_size, p6::Context& ctx)
+{
+    p6::Angle rotation = 0_turn;
+    ctx.stroke         = {1, 0, 0, 0.5};
+    ctx.stroke_weight  = 0.15f;
+    ctx.square(p6::Center{case_center(board_size, case_index)},
+               p6::Radius{0.3f},
+               p6::Rotation{rotation});
+}
+
+static void draw_player(Player current_player, case_index case_index, int board_size, p6::Context& ctx)
+{
+    if (current_player == Player::Crosses) {
+        draw_cross(case_index, board_size, ctx);
+    }
+    else {
+        draw_nought(case_index, board_size, ctx);
+    }
+}
+
+template<int size>
+void draw_noughts_and_crosses(const Board<size>& board, p6::Context& ctx)
+{
+    for (int x = 0; x < size; x++) {
+        for (int y = 0; y < size; y++) {
+            const auto case_index = board[{x, y}];
+            if (case_index.has_value()) {
+                draw_player(*case_index, {x, y}, size, ctx);
+            }
+        }
+    }
 }
 
 static void draw_case(case_index case_index, const int& board_size, p6::Context& ctx)
@@ -95,29 +123,6 @@ static std::optional<case_index> case_hovered(glm::vec2 mousse_position, const i
     }
 }
 
-static glm::vec2 case_center(const int& board_size, case_index case_index)
-{
-    return case_bottom_left_corner(case_index, board_size) + case_radius(board_size);
-}
-
-static void draw_nought(case_index case_index, const int& board_size, p6::Context& ctx)
-{
-    ctx.stroke        = {1, 0, 0, 0.5};
-    ctx.stroke_weight = 0.15f;
-    ctx.circle(p6::Center{case_center(board_size, case_index)},
-               p6::Radius{0.3f});
-}
-
-static void draw_cross(case_index case_index, const int& board_size, p6::Context& ctx)
-{
-    p6::Angle rotation = 0_turn;
-    ctx.stroke         = {1, 0, 0, 0.5};
-    ctx.stroke_weight  = 0.15f;
-    ctx.square(p6::Center{case_center(board_size, case_index)},
-               p6::Radius{0.3f},
-               p6::Rotation{rotation});
-}
-
 static void change_player(Player& player)
 {
     if (player == Player::Crosses) {
@@ -140,6 +145,15 @@ void try_to_place_symbol(std::optional<case_index>& case_index, Board<size>& boa
     }
 }
 
+template<int size>
+void draw_symbol_in_hovered_case(Player player, Board<size> board, p6::Context& ctx)
+{
+    const auto hovered_case = case_hovered(ctx.mouse(), size);
+    if (hovered_case.has_value() && !board[*hovered_case].has_value()) {
+        draw_player(player, *hovered_case, size, ctx);
+    }
+}
+
 void play_nought_and_cross()
 {
     const int board_size     = 3;
@@ -156,6 +170,7 @@ void play_nought_and_cross()
         ctx.fill          = {0.f, 0.f, 0.f, 0.f};
         draw_board(board_size, ctx);
         draw_noughts_and_crosses(board, ctx);
+        draw_symbol_in_hovered_case(current_player, board, ctx);
     };
     ctx.start();
 }
