@@ -164,14 +164,16 @@
     🌔 Create case_hovered
 
     20/04/22
-    🌔 Create draw_nought function
-    🌔 Create draw_cross function
+    🌕 Create draw_nought function
+    🌕 Create draw_cross function
     🌔 Create Board class
     🌔 Create draw_nought_and_cross function
 
     11/05/22
-    🌔 Create change_player function
-    🌔 Create try_to_place_symbol function
+    🌕 Create change_player function
+    🌕 Create try_to_place_symbol function
+    🌔 Create draw_player function
+    🌔 Create draw_symbol_in_hovered_case function
 
 ### 🌑 Connect 4
 
