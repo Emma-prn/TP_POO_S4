@@ -77,13 +77,14 @@
 - 📕 Advanced Git features
 - 📗 CMake (23/03/22)
 - 📕 Functional programming
-- 📕 Move semantics
-- 📕 The Rule of 5
+- 📗 Move semantics (11/05/22)
+- 📗 The Rule of 5 (11/05/22)
 - 📕 State and Strategy
 - 📕 std::variant
 - 📕 Cache and Branches
 - 📕 Multithreading
 - 📕 Polymorphism
+- 📗 Space out your code (11/05/22)
 
 ## Assignments
 
