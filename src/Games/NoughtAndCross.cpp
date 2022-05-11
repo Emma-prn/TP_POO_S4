@@ -118,22 +118,43 @@ static void draw_cross(case_index case_index, const int& board_size, p6::Context
                p6::Rotation{rotation});
 }
 
+static void change_player(Player& player)
+{
+    if (player == Player::Crosses) {
+        player = Player::Noughts;
+    }
+    else {
+        player = Player::Crosses;
+    }
+}
+
+template<int size>
+void try_to_place_symbol(std::optional<case_index>& case_index, Board<size>& board, Player& current_player)
+{
+    if (case_index.has_value()) {
+        const auto case_is_empty = !board[*case_index].has_value();
+        if (case_is_empty) {
+            board[*case_index] = current_player;
+            change_player(current_player);
+        }
+    }
+}
+
 void play_nought_and_cross()
 {
-    const int board_size = 3;
-    auto      ctx        = p6::Context{{1280, 720, "Noughts and Crosses"}};
-    auto      board      = Board<board_size>{};
-    board[{0, 1}]        = Player::Crosses;
-    ctx.update           = [&]() {
+    const int board_size     = 3;
+    auto      ctx            = p6::Context{{1280, 720, "Noughts and Crosses"}};
+    auto      board          = Board<board_size>{};
+    Player    current_player = Player::Crosses;
+    ctx.mouse_pressed        = [&](p6::MouseButton event) {
+        try_to_place_symbol(case_hovered(event.position, board_size), board, current_player);
+    };
+    ctx.update = [&]() {
         ctx.background({0.2f, 0.8f, 0.2f});
         ctx.stroke_weight = 0.01f;
         ctx.stroke        = {1.f, 1.f, 1.f, 1.f};
         ctx.fill          = {0.f, 0.f, 0.f, 0.f};
         draw_board(board_size, ctx);
-        const auto hovered_case = case_hovered(ctx.mouse(), board_size);
-        if (hovered_case.has_value()) {
-            draw_nought(*hovered_case, board_size, ctx);
-        }
         draw_noughts_and_crosses(board, ctx);
     };
     ctx.start();
