@@ -174,6 +174,7 @@
     🌕 Create try_to_place_symbol function
     🌔 Create draw_player function
     🌔 Create draw_symbol_in_hovered_case function
+    🌔 Create board_is_full function
 
 ### 🌑 Connect 4
 
