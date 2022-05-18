@@ -160,11 +160,78 @@ void draw_symbol_in_hovered_case(Player player, Board<size> board, p6::Context& 
 }
 
 template<int size>
+std::optional<Player> check_for_winner_on_line(const Board<size>& board, std::function<case_index(int)> index_generator)
+{
+    const bool equal = [&]() {
+        for (int position = 0; position < size - 1; position++) {
+            if (board[index_generator(position)] != board[index_generator(position + 1)]) {
+                return false;
+            }
+        }
+        return true;
+    }();
+    if (equal && board[index_generator(0)].has_value()) {
+        return board[index_generator(0)];
+    }
+    else {
+    }
+    return std::nullopt;
+}
+
+template<int size>
+std::optional<Player> check_for_winner(const Board<size>& board)
+{
+    std::optional<Player> winner = std::nullopt;
+    for (int x = 0; x < size && !winner.has_value(); x++) {
+        winner = check_for_winner_on_line(board, [x](int position) {
+            return case_index{x, position};
+        });
+    }
+    for (int y = 0; y < size && !winner.has_value(); y++) {
+        winner = check_for_winner_on_line(board, [y](int position) {
+            return case_index{position, y};
+        });
+    }
+    if (!winner.has_value()) {
+        winner = check_for_winner_on_line(board, [](int position) {
+            return case_index{position, position};
+        });
+    }
+    if (!winner.has_value()) {
+        winner = check_for_winner_on_line(board, [](int position) {
+            return case_index{position, size - position - 1};
+        });
+    }
+    return winner;
+}
+
+template<int size>
 bool board_is_full(const Board<size>& board)
 {
     return std::all_of(board.begin(), board.end(), [](const auto& cell) {
         return cell.has_value();
     });
+}
+
+template<int size>
+bool game_is_finished(const Board<size>& board)
+{
+    if (auto winner = check_for_winner(board)) {
+        if (*winner == Player::Crosses) {
+            std::cout << "The Crosses won !" << std::endl;
+        }
+        else {
+            std::cout << "The Noughts won !" << std::endl;
+        }
+        return true;
+    }
+    else if (board_is_full(board)) {
+        std::cout << "Well...Draw..." << std::endl;
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 void play_nought_and_cross()
@@ -184,7 +251,7 @@ void play_nought_and_cross()
         draw_board(board_size, ctx);
         draw_noughts_and_crosses(board, ctx);
         draw_symbol_in_hovered_case(current_player, board, ctx);
-        if (board_is_full(board)) {
+        if (game_is_finished(board)) {
             ctx.stop();
         }
     };
