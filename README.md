@@ -79,11 +79,11 @@
 - 📕 Functional programming
 - 📗 Move semantics (11/05/22)
 - 📗 The Rule of 5 (11/05/22)
-- 📕 State and Strategy
-- 📕 std::variant
+- 📗 State and Strategy
+- 📗 std::variant
 - 📕 Cache and Branches
 - 📕 Multithreading
-- 📕 Polymorphism
+- 📗 Polymorphism
 - 📗 Space out your code (11/05/22)
 
 ## Assignments
