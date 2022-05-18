@@ -218,15 +218,15 @@ bool game_is_finished(const Board<size>& board)
 {
     if (auto winner = check_for_winner(board)) {
         if (*winner == Player::Crosses) {
-            std::cout << "The Crosses won !" << std::endl;
+            std::cout << "The Crosses won this battle ! Better luck next time Nought" << std::endl;
         }
         else {
-            std::cout << "The Noughts won !" << std::endl;
+            std::cout << "The Noughts won this battle ! Better luck next time Cross" << std::endl;
         }
         return true;
     }
     else if (board_is_full(board)) {
-        std::cout << "Well...Draw..." << std::endl;
+        std::cout << "Well...Draw...Wanna play again ?" << std::endl;
         return true;
     }
     else {
