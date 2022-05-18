@@ -2,7 +2,9 @@
 
 #include "GuessTheNumber.h"
 #include "Hangman.h"
+#include "NoughtAndCross.h"
 #include "PlayerInput.h"
+
 
 void show_the_list_of_commands()
 {
@@ -10,6 +12,7 @@ void show_the_list_of_commands()
 What do you want to do ?
 1 : Become clairvoyant
 2 : Save a friend
+3 : Make a strategie
 q : I just want to be left alone
     )" << std::endl;
 }
@@ -27,6 +30,10 @@ void show_menu()
 
         case '2':
             play_hangman();
+            break;
+
+        case '3':
+            play_nought_and_cross();
             break;
 
         case 'q':
