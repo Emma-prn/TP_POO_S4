@@ -63,7 +63,7 @@
 - 📕 Code reviews
 - 📗 const (06/04/22)
 - 📗 Documentation (06/04/22)
-- 📗 Don't overfocus on performance
+- 📗 Don't overfocus on performance (18/05/22)
 - 📗 Git submodules (23/03/22)
 - 📕 STL algorithms
 - 📕 Debug vs Release
@@ -73,17 +73,17 @@
 - 📗 Smart Pointers (20/04/22)
 - 📗 std::function (20/04/22)
 - 📕 Error Handling
-- 📗 Git Pull Requests
+- 📗 Git Pull Requests (18/05/22)
 - 📕 Advanced Git features
 - 📗 CMake (23/03/22)
 - 📕 Functional programming
 - 📗 Move semantics (11/05/22)
 - 📗 The Rule of 5 (11/05/22)
-- 📗 State and Strategy
-- 📗 std::variant
+- 📗 State and Strategy (18/05/22)
+- 📗 std::variant (18/05/22)
 - 📕 Cache and Branches
 - 📕 Multithreading
-- 📗 Polymorphism
+- 📗 Polymorphism (18/05/22)
 - 📗 Space out your code (11/05/22)
 
 ## Assignments
@@ -149,11 +149,11 @@
     16/03/22
     🌕 Create the template for the get_input_from_player
 
-### 🌓 Noughts and Crosses
+### 🌕 Noughts and Crosses
 
     06/04/22
     🌕 Add p6 lib
-    🌒 Create play_nought_and_cross function (base)
+    🌕 Create play_nought_and_cross function (base)
 
     13/04/22
     🌕 Create case_index structure
@@ -161,20 +161,25 @@
     🌕 Create case_bottom_left_corner function
     🌕 Create draw_case function
     🌕 Use draw_case in draw_board
-    🌔 Create case_hovered
+    🌕 Create case_hovered
 
     20/04/22
     🌕 Create draw_nought function
     🌕 Create draw_cross function
-    🌔 Create Board class
-    🌔 Create draw_nought_and_cross function
+    🌕 Create Board class
+    🌕 Create draw_nought_and_cross function
 
     11/05/22
     🌕 Create change_player function
     🌕 Create try_to_place_symbol function
-    🌔 Create draw_player function
-    🌔 Create draw_symbol_in_hovered_case function
-    🌔 Create board_is_full function
+    🌕 Create draw_player function
+    🌕 Create draw_symbol_in_hovered_case function
+    🌕 Create board_is_full function
+
+    18/05/22
+    🌕 Create check for a winner (+ on line) function
+    🌕 Create game_is_finished function
+    🌕 Add play_nought_and_cross to the menu
 
 ### 🌑 Connect 4
 
